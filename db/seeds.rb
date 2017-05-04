@@ -15,6 +15,14 @@ posts = Post.all
   )
 end
 
+20.times do
+  Advertisement.create!(
+    title: RandomData.random_word,
+    body: RandomData.random_sentence,
+    price: Random.rand(0..100)
+  )
+end
+
 Post.find_or_create_by(
   title: 'This is a unique Post',
   body: 'This post is meant to serve as a unique seed for the database. It will
@@ -27,6 +35,13 @@ Comment.find_or_create_by(
   body: "This is a unique comment, enter any trolling comments that you would like."
 )
 
+Advertisement.find_or_create_by(
+  title: "Sandbox Suites",
+  body: "Working on your own, doesn't have to mean working alone.",
+  price: 99
+)
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Advertisement.count} ads created"
