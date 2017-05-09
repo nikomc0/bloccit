@@ -15,6 +15,14 @@ posts = Post.all
   )
 end
 
+20.times do
+  Question.create!(
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
+    resolved: false
+  )
+end
+
 Post.find_or_create_by(
   title: 'This is a unique Post',
   body: 'This post is meant to serve as a unique seed for the database. It will
@@ -30,3 +38,4 @@ Comment.find_or_create_by(
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Question.count} questions created"
