@@ -24,6 +24,15 @@ posts = Post.all
   )
 end
 
+20.times do
+  SponsoredPost.create!(
+    topic: topics.sample,
+    title: RandomData.random_sentence,
+    body:  RandomData.random_paragraph,
+    price: Random.rand(0..100)
+  )
+end
+
 Post.find_or_create_by(
   title: 'This is a unique Post',
   body: 'This post is meant to serve as a unique seed for the database. It will
@@ -40,3 +49,4 @@ puts "Seed finished"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{SponsoredPost.count} sponsored posts created"
