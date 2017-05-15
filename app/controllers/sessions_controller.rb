@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
+    avatar_url(user)
 
     if user && user.authenticate(params[:session][:password])
       create_session(user)
