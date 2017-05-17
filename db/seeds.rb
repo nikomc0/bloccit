@@ -45,9 +45,16 @@ Comment.find_or_create_by(
   body: "This is a unique comment, enter any trolling comments that you would like."
 )
 
-user = User.first
-user.update_attributes!(
-  email: 'dominick@theosfp.com',
+admin = User.create!(
+  name:     'Admin User',
+  email:    'admin@example.com',
+  password: 'helloworld',
+  role:     'admin'
+)
+
+member = User.create!(
+  name:     'Member User',
+  email:    'member@example.com',
   password: 'helloworld'
 )
 
