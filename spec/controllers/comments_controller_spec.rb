@@ -6,12 +6,12 @@ RSpec.describe CommentsController, type: :controller do
   let(:other_user) { create(:user) }
   let(:my_topic) { create(:topic) }
   let(:my_post) { create(:post, topic: my_topic, user: my_user) }
-  let(:my_comment) { Comment.create!(body: 'Comment Body', post: my_post, user: my_user) }
+  let(:my_comment) { create(:comment, post: my_post, user: my_user) }
 
   context "guest" do
     describe "POST create" do
       it "redirects the user to the sign in view" do
-        post :create, post_id: my_post.id, comment: {body: RandomData.random_paragraph}
+        post :create, post_id: my_post.id, comment: my_comment.body
         expect(response).to redirect_to(new_session_path)
       end
     end
