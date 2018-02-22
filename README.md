@@ -22,10 +22,10 @@ To aid in development automatic seed data is generated to create sample topics a
 #### Simple CRUD.
 Users can CREATE, READ, UPDATE, DESTROY for posts, topics, and comments.
 
-![alt text](https://github.com/nikomc0/bloccit/blob/master/assets/form_validation_1.gif "Form Validation")
+![alt text](https://github.com/nikomc0/bloccit/blob/master/assets/form_validation.gif "Form Validation")
 
 ##### Form Validation
 Creates minimum character amount before form submission.
 
-![alt text](https://github.com/nikomc0/bloccit/blob/master/assets/form_validation.gif "Form Validation")
+![alt text](https://github.com/nikomc0/bloccit/blob/master/assets/form_validation_1.gif "Form Validation")
 
